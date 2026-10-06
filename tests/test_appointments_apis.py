@@ -2,7 +2,7 @@ import pytest
 from endpoints.api_endpoints import AppointmentsEndpoints
 from schemas.appointments_schema import APPOINTMENTS_SCHEMA
 
-@pytest.mark.rest_api_sanity
+@pytest.mark.rest_api_sanity1
 def test_appointments_doctor_api_validation(appointments_client, test_data_reader, validator):
     clinic_id = test_data_reader["clinic_id"]
     doctor_id = test_data_reader["doctor_id"]

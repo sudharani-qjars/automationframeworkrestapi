@@ -2,6 +2,8 @@ import pytest
 import os
 
 from dotenv import load_dotenv
+
+from apis.jsonplaceholder_client import PostsClient
 from utilities.data_reader import TestDataReader
 from utilities.config_reader import ConfigReader
 from utilities.schema_validator import SchemaValidator
@@ -42,3 +44,7 @@ def validator():
 @pytest.fixture(scope="session")
 def appointments_client(config_data_reader):
     return AppointmentsClient(config_data_reader.get("url"))
+
+@pytest.fixture(scope="session")
+def posts_client(config_data_reader):
+    return PostsClient(config_data_reader.get("url"))

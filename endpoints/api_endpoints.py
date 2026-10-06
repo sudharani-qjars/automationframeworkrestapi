@@ -3,3 +3,6 @@ class ClinicEndpoints:
 
 class AppointmentsEndpoints:
     GET_CLINIC_DOCTOR_APPOINTMENTS = "/api/appointments/clinic/{clinic_id}/get-available-slots/{doctor_id}/{date}/"
+
+class PostsEndpoints:
+    GET_POST = "/posts/{post_id}"
