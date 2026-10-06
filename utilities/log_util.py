@@ -4,6 +4,8 @@ import os
 class CommonLogger:
     def __init__(self, name="afwlogs"):
         self.log_file = os.path.join(os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs"),"afw.txt")
+        if not os.path.exists(self.log_file):
+            os.makedirs(os.path.dirname(self.log_file))
         self.logger = logging.getLogger(name)
         self.logger.setLevel(logging.DEBUG)
 
