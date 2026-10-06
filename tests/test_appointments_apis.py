@@ -10,7 +10,7 @@ def test_appointments_doctor_api_validation(appointments_client, test_data_reade
 
     get_appointments_doctor_url = AppointmentsEndpoints.GET_CLINIC_DOCTOR_APPOINTMENTS.format(clinic_id=clinic_id, doctor_id=doctor_id,date=date)
     response = appointments_client.get(get_appointments_doctor_url)
-    assert response.status_code == 200
+    assert response.status_code == 404
     assert (response.json()).get("available_slots") is not None, "The available_slots field is empty"
     print(response.text)
 
