@@ -3,7 +3,13 @@
   "clinic_id": 15,
   "doctor_id": 382,
   "date": "2026-09-29",
-  "post_id": 1
+  "post_id": 1,
+  "signup_email_data": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "sat@gmail.com",
+    "password": "123456"
+  }
 },
   "prod":
 {

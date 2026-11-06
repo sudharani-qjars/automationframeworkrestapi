@@ -6,3 +6,6 @@ class AppointmentsEndpoints:
 
 class PostsEndpoints:
     GET_POST = "/posts/{post_id}"
+
+class AutomationPracticeEndpoints:
+    GET_ALL_BRANDS = "/api/brandsList"

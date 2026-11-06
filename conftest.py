@@ -10,6 +10,7 @@ from utilities.schema_validator import SchemaValidator
 
 from apis.clinics_client import ClinicsClient
 from apis.appointments_client import AppointmentsClient
+from apis.automationpractise_client import AutomationPracticeClient
 
 @pytest.fixture(scope="session", autouse=True)
 def load_env():
@@ -48,3 +49,7 @@ def appointments_client(config_data_reader):
 @pytest.fixture(scope="session")
 def posts_client(config_data_reader):
     return PostsClient(config_data_reader.get("url"))
+
+@pytest.fixture(scope="session")
+def automation_practice_client(config_data_reader):
+    return AutomationPracticeClient(config_data_reader.get("url"))

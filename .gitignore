@@ -1,20 +1,3 @@
-# Python cache
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual Environment
-venv/
-.venv/
-env/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-logs/
-*.log
-
-# Test Reports
-reports/
+*.pyc
+*.png
+reports

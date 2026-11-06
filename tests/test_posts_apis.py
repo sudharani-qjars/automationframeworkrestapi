@@ -2,7 +2,7 @@ import pytest
 from endpoints.api_endpoints import PostsEndpoints
 from schemas.post_schema import POST_SCHEMA
 
-@pytest.mark.rest_api_sanity
+@pytest.mark.rest_api_sanity1
 def test_posts_api_validation(posts_client, test_data_reader, validator):
     post_id = test_data_reader["post_id"]
     get_posts_url = PostsEndpoints.GET_POST.format(post_id=post_id)

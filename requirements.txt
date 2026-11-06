@@ -4,3 +4,8 @@ pytest-html==4.1.1
 pytest==7.4.2
 requests==2.31.0
 jsonschema==4.17.3
+pytest
+allure-pytest
+requests
+allure-python-commons
+dotenv

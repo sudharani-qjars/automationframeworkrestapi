@@ -3,9 +3,9 @@ base_client.py
 
 Simple HTTP client for API automation.
 """
-
+import allure
 import requests
-
+import json
 
 class BaseClient:
     """
@@ -26,51 +26,112 @@ class BaseClient:
         """
         Send GET request.
         """
-        return self.session.get(
+        response = self.session.get(
             url=f"{self.base_url}{endpoint}",
             params=params,
             headers=headers
         )
+        allure.attach(
+            f"{self.base_url}{endpoint}",
+            "Request URL",
+            allure.attachment_type.TEXT
+        )
+
+        allure.attach(
+            json.dumps(response.json(), indent=4),
+            "Response",
+            allure.attachment_type.JSON
+        )
+        return response
 
     def post(self, endpoint: str, json=None, data=None, headers=None):
         """
         Send POST request.
         """
-        return self.session.post(
+        response = self.session.post(
             url=f"{self.base_url}{endpoint}",
             json=json,
             data=data,
             headers=headers
         )
+        allure.attach(
+            f"{self.base_url}{endpoint}",
+            "Request URL",
+            allure.attachment_type.TEXT
+        )
+
+        allure.attach(
+            json.dumps(response.json(), indent=4),
+            "Response",
+            allure.attachment_type.JSON
+        )
+        return response
 
     def put(self, endpoint: str, json=None, headers=None):
         """
         Send PUT request.
         """
-        return self.session.put(
+        response = self.session.put(
             url=f"{self.base_url}{endpoint}",
             json=json,
             headers=headers
         )
+        allure.attach(
+            f"{self.base_url}{endpoint}",
+            "Request URL",
+            allure.attachment_type.TEXT
+        )
+
+        allure.attach(
+            json.dumps(response.json(), indent=4),
+            "Response",
+            allure.attachment_type.JSON
+        )
+        return response
+
 
     def patch(self, endpoint: str, json=None, headers=None):
         """
         Send PATCH request.
         """
-        return self.session.patch(
+        response = self.session.patch(
             url=f"{self.base_url}{endpoint}",
             json=json,
             headers=headers
         )
+        allure.attach(
+            f"{self.base_url}{endpoint}",
+            "Request URL",
+            allure.attachment_type.TEXT
+        )
+
+        allure.attach(
+            json.dumps(response.json(), indent=4),
+            "Response",
+            allure.attachment_type.JSON
+        )
+        return response
 
     def delete(self, endpoint: str, headers=None):
         """
         Send DELETE request.
         """
-        return self.session.delete(
+        response = self.session.delete(
             url=f"{self.base_url}{endpoint}",
             headers=headers
         )
+        allure.attach(
+            f"{self.base_url}{endpoint}",
+            "Request URL",
+            allure.attachment_type.TEXT
+        )
+
+        allure.attach(
+            json.dumps(response.json(), indent=4),
+            "Response",
+            allure.attachment_type.JSON
+        )
+        return response
 
     def close(self):
         """
